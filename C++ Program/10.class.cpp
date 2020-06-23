@@ -3,7 +3,7 @@ using namespace std;
 class complex
 {
 private:
-	int a,b;
+	int a, b;
 public:
 	void set_data(int x ,int y)
 	{
