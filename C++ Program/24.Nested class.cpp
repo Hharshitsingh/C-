@@ -1,5 +1,4 @@
 #include <iostream>
-#include<string.h>
 #include<string>
 #include<limits>
 #include<ios>
@@ -44,7 +43,7 @@ public:
     {
         cout<<"Enter Your Roll No.: ";
         cin>>rollno;
-        cout<<"Enter Your Name: "<<flush;
+        cout<<"Enter Your Name: ";
         cin.ignore(numeric_limits<streamsize>::max()!='\n');
         getline(cin,name);
         adres.setAdress();
