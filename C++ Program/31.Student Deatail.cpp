@@ -5,14 +5,14 @@
 #include<limits>
 void clearbuffer();         //function for clear input buffer
 using namespace std;
-// structure for student all deatail
-struct student{
-private:        //private variables and functions acces by this structure or local scope
+// class for student all deatail
+class student{
+private:        //private variables and functions acces by this class or local scope
         string nameofstu;
         int rollno,age;
-        // nesting of structure 
-        // structure for student address
-        struct address{
+        // nesting of class 
+        // class for student address
+        class address{
             private:
                 string houseno;
                 string area;
@@ -42,8 +42,8 @@ private:        //private variables and functions acces by this structure or loc
                     cout<<city<<", "<<state<<"-"<<pincode<<endl;
                 }
         }addressofstu;
-        // structure for student marks
-        struct marks{
+        // class for student marks
+        class marks{
         private:
             string sub[4] = {"PPS", "Chem", "English", "MathsII"};
             float mark[4],total=0;
@@ -76,8 +76,10 @@ private:        //private variables and functions acces by this structure or loc
             }
         } marksofstu;
 public:     //public variables and functions access in whole program or global scope
-    void inputdata()        //input student detail
+    student()        //input student detail
     {
+        static int i = 1;
+        cout<<"Enter Detail of student "<<i++<<endl;
         cout<<"Name: ";
         clearbuffer();
         getline(cin,nameofstu);
@@ -102,13 +104,8 @@ int main()
 {
     int i;
     student s[4];
-    for(i=0;i<4;i++)
-    {
-        cout<<"\n Enter Detail of Student "<<i+1<<endl;
-        s[i].inputdata();
-    }
     cout<<endl;
-    for(i=0;i<4;i++)
+    for(i=0;i<2;i++)
     {
         cout<<"\nDetail of Student "<<i+1<<endl;
         s[i].showdata();
