@@ -102,10 +102,12 @@ public:     //public variables and functions access in whole program or global s
 //main code
 int main() 
 {
-    int i;
-    student s[4];
+    int i,n;
+    cout<<"How many Students detail you want to Enter: ";
+    cin>>n;
+    student s[n];
     cout<<endl;
-    for(i=0;i<2;i++)
+    for(i=0;i<n;i++)
     {
         cout<<"\nDetail of Student "<<i+1<<endl;
         s[i].showdata();
